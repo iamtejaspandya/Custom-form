@@ -1,0 +1,142 @@
+<?php 
+ if($block->IsEnabled() != 1){
+  header("location: http://127.0.0.1/m246/");
+  exit;
+ }
+?>
+
+
+<h2>Welcome to Tejas's My Module</h2>
+<form name="addData" method="post" id="addData" class="form"
+              action="<?php echo $this->getFormAction(); ?>"
+              data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+              data-mage-init='{"validation":{}}'>
+  <div class="field field-name-firstname required">
+     <label class="label" for="firstname">
+      <span>First Name</span>
+    </label>
+    <div class="control">
+     <input type="text" id="firstname" name="first_name" value="" title="firstName" class="input-text required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+    </div>
+  </div>
+  <div class="field field-name-lastname required">
+     <label class="label" for="lastname">
+      <span>Last Name</span>
+    </label>
+    <div class="control">
+     <input type="text" id="lastname" name="last_name" value="" title="lastName" class="input-text required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+    </div>
+  </div>
+  <div class="field field-name-gander required">
+   <label for="gender">Gender</label><br>
+    <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="Male" required>
+    <label class="form-check-label" for="exampleRadios1">
+    Male
+    </label>
+    <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="Female" required>
+    <label class="form-check-label" for="exampleRadios2">
+    Female
+    </label>
+  </div>
+  <div class="field required">
+    <label for="email_address" class="label">
+     <span>Email</span>
+    </label>
+    <div class="control">
+     <input type="email" name="email" autocomplete="email" id="email_address" value="" title="Email" class="input-text" data-validate="{required:true, 'validate-email':true}" aria-required="true">
+    </div>
+  </div>
+  <div class="field street required">
+    <label for="street_1" class="label"><span>Street Address</span></label>
+    <div class="control">
+      <div class="field primary">
+        <label for="street_1" class="label">
+          <span>
+           Street Address: Line 1
+          </span>
+       </label>
+      </div>
+      <input type="text" name="adress1" value="" title="streetAddress1" id="street_1" class="input-text required-entry" aria-required="true">
+      <div class="nested">
+      <div class="field additional">
+        <label class="label" for="street_2">
+          <span>Street Address: Line 2</span>
+        </label>
+        <div class="control">
+        <input type="text" name="adress2" value="" title="streetAddress2" id="street_2" class="input-text" aria-required="true">
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity" name="city" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState" placeholder="Choose Your State">State</label>
+      <select name="state" id="state" class="form-control" required>
+          <option value="">Choose your state..</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+          <option value="Assam">Assam</option>
+          <option value="Bihar">Bihar</option>
+          <option value="Chandigarh">Chandigarh</option>
+          <option value="Chhattisgarh">Chhattisgarh</option>
+          <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+          <option value="Daman and Diu">Daman and Diu</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Lakshadweep">Lakshadweep</option>
+          <option value="Puducherry">Puducherry</option>
+          <option value="Goa">Goa</option>
+          <option value="Gujarat">Gujarat</option>
+          <option value="Haryana">Haryana</option>
+          <option value="Himachal Pradesh">Himachal Pradesh</option>
+          <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+          <option value="Jharkhand">Jharkhand</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Madhya Pradesh">Madhya Pradesh</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Manipur">Manipur</option>
+          <option value="Meghalaya">Meghalaya</option>
+          <option value="Mizoram">Mizoram</option>
+          <option value="Nagaland">Nagaland</option>
+          <option value="Odisha">Odisha</option>
+          <option value="Punjab">Punjab</option>
+          <option value="Rajasthan">Rajasthan</option>
+          <option value="Sikkim">Sikkim</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Telangana">Telangana</option>
+          <option value="Tripura">Tripura</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="Uttarakhand">Uttarakhand</option>
+          <option value="West Bengal">West Bengal</option>
+      </select>
+    </div>
+    <div class="field zip required">
+     <label class="label" for="zip">
+     <span>Zip/Postal Code</span>
+     </label>
+     <div class="control">
+     <input type="text" name="zip_code" value="" title="Zip/Postal Code" id="zip" class="input-text validate-zip-international required-entry" aria-required="true">
+     <div role="alert" class="message warning" style="display: none;">
+     <span></span>
+     </div>
+    </div>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">What's on your mind?</label>
+    <textarea class="form-control" name="feedback" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="actions-toolbar">
+    <div class="primary">
+    <button type="submit" class="action submit primary" title="Save"><span><?= $block->escapeHtmlAttr(__('Save')) ?></span>
+   </button>
+   </div>
+  </div>
+</form>
+

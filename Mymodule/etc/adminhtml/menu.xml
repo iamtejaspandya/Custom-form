@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Tejas_Mymodule::custom_menu" title="Custom Menu" module="Tejas_Mymodule" sortOrder="51" resource="Tejas_Mymodule::custom_menu"/>
+    </menu>
+</config>
